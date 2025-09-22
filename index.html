@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Princess ❤️</title>
+  <title>Happy Birthday My Queen ❤️</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -11,6 +11,7 @@
       text-align: center;
       padding: 20px;
       color: #fff;
+      overflow-x: hidden;
     }
     h1 {
       font-size: 2.5em;
@@ -58,21 +59,104 @@
       font-size: 1.2em;
       font-weight: bold;
     }
+
+    /* Crackers animation */
+    .firework {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      border-radius: 50%;
+      animation: explode 1.2s ease-out infinite;
+    }
+    @keyframes explode {
+      from { transform: scale(0); opacity: 1; }
+      to { transform: scale(3); opacity: 0; }
+    }
+
+    /* Cake */
+    .cake {
+      margin: 20px auto;
+      width: 150px;
+      height: 100px;
+      background: pink;
+      border-radius: 10px;
+      position: relative;
+    }
+    .candle {
+      width: 10px;
+      height: 40px;
+      background: yellow;
+      margin: auto;
+      position: absolute;
+      top: -40px;
+      left: 0; right: 0;
+    }
+    .flame {
+      width: 15px;
+      height: 15px;
+      background: orange;
+      border-radius: 50%;
+      margin: auto;
+      position: absolute;
+      top: -55px;
+      left: 0; right: 0;
+      animation: flicker 0.5s infinite alternate;
+    }
+    @keyframes flicker {
+      from { transform: scale(1); opacity: 1; }
+      to { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    /* Floating miss you */
+    .floating {
+      position: fixed;
+      font-size: 1.2em;
+      color: #fff;
+      animation: float 5s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
   </style>
 </head>
 <body>
   <h1>🎂 Happy Birthday My Princess ❤️</h1>
-  <h2>💓 Meri Pyaari Se Shehzadi Ji 💓</h2>
-  <p>Hamesha khush raho, muskurati raho, tum meri duniya ho 🌎✨</p>
+  <h2>💓 Meri Pyaari Shehzadi Ji 💓</h2>
 
+  <!-- Crackers -->
+  <div class="firework" style="left:20%;top:20%;background:red;"></div>
+  <div class="firework" style="left:70%;top:30%;background:yellow;"></div>
+  <div class="firework" style="left:50%;top:50%;background:blue;"></div>
+
+  <!-- Cake -->
+  <div class="cake">
+    <div class="candle"></div>
+    <div class="flame"></div>
+  </div>
+
+  <!-- Slideshow -->
   <div id="thumb">🎉 Click Play to Start Slideshow 🎉</div>
-
   <button id="playBtn">▶ Play Slideshow</button>
   <button id="stopBtn">⏹ Stop Slideshow</button>
 
+  <!-- Wishes -->
   <footer>
-    🥳 Once again... Happy Birthday, Boss! 🎁  
+    🎊 Happy Birthday Madam Ji 🎊  
   </footer>
+
+  <p style="font-size:1.2em;max-width:600px;margin:auto;">
+    Tum meri zindagi ki sabse khoobsurat wajah ho 💕.  
+    Tumhari muskaan meri rooh ko sukoon deti hai ✨.  
+    Har din tumhari yaadon se rangeen hota hai aur aaj ka din tumhare liye aur bhi khaas hai.  
+    Dua karta hoon tumhari zindagi hamesha khushiyo se bhari rahe 🎁💖.  
+    I love you endlessly meri jaan ❤️.
+  </p>
+
+  <!-- Floating text -->
+  <div class="floating" style="left:10%;">Miss you babe 💗</div>
+  <div class="floating" style="left:80%;">Miss you babe ✨</div>
 
   <script>
     const hostedImages = [
