@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Muniba ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #000, #1a001f);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      margin: 10px 0;
+      text-shadow: 0 0 15px #ff4da6;
+    }
+
+    /* 🎂 3D Cake */
+    .cake {
+      position: relative;
+      margin: 40px auto;
+      width: 220px;
+      height: 160px;
+      perspective: 1000px;
+    }
+    .layer {
+      width: 220px;
+      height: 50px;
+      border-radius: 20px;
+      margin-bottom: 5px;
+      background: linear-gradient(45deg, #ff4da6, #ff99cc);
+      box-shadow: 0 10px 25px rgba(255, 77, 166, 0.7);
+      transform: rotateX(20deg);
+    }
+    .candle {
+      position: absolute;
+      top: -50px;
+      left: 100px;
+      width: 20px;
+      height: 50px;
+      background: #fff;
+      border-radius: 5px;
+    }
+    .flame {
+      position: absolute;
+      top: -25px;
+      left: 106px;
+      width: 10px;
+      height: 25px;
+      background: radial-gradient(circle, yellow 60%, orange 90%);
+      border-radius: 50%;
+      animation: flicker 0.3s infinite alternate;
+      box-shadow: 0 0 25px 7px orange;
+    }
+    @keyframes flicker {
+      from { transform: scale(1); opacity: 1; }
+      to { transform: scale(1.2); opacity: 0.6; }
+    }
+
+    /* Fireworks */
+    .firework {
+      position: fixed;
+      width: 4px;
+      height: 80px;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+    @keyframes explode {
+      0% { transform: scale(0.2); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    /* Photos */
+    .photos img {
+      max-width: 90%;
+      max-height: 400px;
+      border-radius: 15px;
+      margin: 15px auto;
+      box-shadow: 0 0 30px #ff1493;
+      display: none;
+    }
+
+    /* Romantic Paragraph */
+    .romantic-text {
+      font-size: 20px;
+      margin: 30px auto;
+      max-width: 85%;
+      line-height: 1.7;
+      color: #ffb6c1;
+      text-shadow: 0 0 12px #ff4da6;
+      animation: fadeIn 3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Final Typing */
+    .final-message {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff4da6;
+      margin-top: 30px;
+      animation: typing 5s steps(40, end), blink .75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ff4da6;
+      width: 0;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .hidden { display: none; }
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background: linear-gradient(45deg, crimson, purple);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 18px #ff4da6;
+    }
+    button:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Happy Birthday My Princess ❤️</h1>
+  <h2>💖 Meri Pyaari Shehzadi Ji 💖</h2>
+
+  <!-- Cake -->
+  <div class="cake" id="cake">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="candle"></div>
+    <div class="flame"></div>
+  </div>
+  <button onclick="cutCake()">Cut the Cake 🎂</button>
+
+  <h2 id="birthdayWish" class="hidden">🎉 Happy Birthday Muniba Ji 🎉</h2>
+
+  <!-- Photos -->
+  <div class="photos" id="slideshow">
+    <img src="images/pic1.jpg">
+    <img src="images/pic2.jpg">
+    <img src="images/pic3.jpg">
+    <img src="images/pic4.jpg">
+    <img src="images/pic5.jpg">
+    <img src="images/pic6.jpg">
+    <img src="images/pic7.jpg">
+    <img src="images/pic8.jpg">
+    <img src="images/pic9.jpg">
+    <img src="images/pic10.jpg">
+    <img src="images/pic11.jpg">
+    <img src="images/pic12.jpg">
+    <img src="images/pic13.jpg">
+    <img src="images/pic14.jpg">
+    <img src="images/pic15.jpg">
+  </div>
+
+  <button onclick="startSlideshow()">▶ Play Slideshow</button>
+
+  <!-- Romantic Paragraph -->
+  <div class="romantic-text" id="loveNote">
+    On your 16th birthday, my love, I just want to remind you —  
+    you’re not just my girlfriend, you’re the reason my heart beats. 💓  
+    Every smile of yours lights up my world brighter than a thousand stars. ✨  
+    I pray that your life is always filled with happiness, laughter and endless love.  
+    You’re my princess 👑, my best friend, my forever dream.  
+    <br><br>
+    Miss you babe ✨💗
+  </div>
+
+  <!-- 16th Happy Birthday -->
+  <h2 id="sixteenMsg" class="hidden">🎉 16th Happy Birthday 🎂🎈 Jana 🎉</h2>
+
+  <!-- Final Message -->
+  <div class="final-message hidden" id="finalMsg">
+    From your Bandar ❤️ Khan ji. Miya ji
+  </div>
+
+  <script>
+    function cutCake() {
+      document.getElementById("cake").classList.add("hidden");
+      document.getElementById("birthdayWish").classList.remove("hidden");
+      for (let i = 0; i < 15; i++) {
+        let fw = document.createElement("div");
+        fw.className = "firework";
+        fw.style.left = Math.random()*100 + "vw";
+        fw.style.top = Math.random()*100 + "vh";
+        fw.style.background = "hsl(" + Math.random()*360 + ",100%,50%)";
+        document.body.appendChild(fw);
+        setTimeout(()=>fw.remove(), 1000);
+      }
+    }
+
+    let currentPhoto = 0;
+    function startSlideshow() {
+      const photos = document.querySelectorAll(".photos img");
+      const note = document.getElementById("loveNote");
+      const sixteen = document.getElementById("sixteenMsg");
+      const final = document.getElementById("finalMsg");
+      photos.forEach(p => p.style.display = "none");
+
+      let interval = setInterval(() => {
+        if (currentPhoto > 0) photos[currentPhoto-1].style.display = "none";
+        if (currentPhoto < photos.length) {
+          photos[currentPhoto].style.display = "block";
+          currentPhoto++;
+        } else {
+          clearInterval(interval);
+          note.classList.remove("hidden");
+          setTimeout(() => {
+            sixteen.classList.remove("hidden");
+          }, 4000);
+          setTimeout(() => {
+            final.classList.remove("hidden");
+          }, 8000);
+        }
+      }, 2000);
+    }
+  </script>
+
+</body>
+  </html>
