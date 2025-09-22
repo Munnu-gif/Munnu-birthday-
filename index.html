@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Princess ❤️</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+    h2 {
+      margin: 15px 0;
+      font-size: 1.5em;
+    }
+    #thumb {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 400px;
+      min-height: 250px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    img {
+      border-radius: 15px;
+      max-width: 100%;
+      height: auto;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      background: #ff4b2b;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff416c;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday My Princess ❤️</h1>
+  <h2>💓 Meri Pyaari Se Shehzadi Ji 💓</h2>
+  <p>Hamesha khush raho, muskurati raho, tum meri duniya ho 🌎✨</p>
+
+  <div id="thumb">🎉 Click Play to Start Slideshow 🎉</div>
+
+  <button id="playBtn">▶ Play Slideshow</button>
+  <button id="stopBtn">⏹ Stop Slideshow</button>
+
+  <footer>
+    🥳 Once again... Happy Birthday, Boss! 🎁  
+  </footer>
+
+  <script>
+    const hostedImages = [
+      "images/pic1.jpg",
+      "images/pic2.jpg",
+      "images/pic3.jpg",
+      "images/pic4.jpg",
+      "images/pic5.jpg",
+      "images/pic6.jpg",
+      "images/pic7.jpg",
+      "images/pic8.jpg",
+      "images/pic9.jpg",
+      "images/pic10.jpg",
+      "images/pic11.jpg",
+      "images/pic12.jpg",
+      "images/pic13.jpg",
+      "images/pic14.jpg",
+      "images/pic15.jpg"
+    ];
+
+    let slideIndex = 0;
+    let slideInterval;
+
+    function showSlides() {
+      const thumb = document.getElementById("thumb");
+      thumb.innerHTML = `<img src="${hostedImages[slideIndex]}" alt="Birthday Photo">`;
+      slideIndex = (slideIndex + 1) % hostedImages.length;
+    }
+
+    document.getElementById("playBtn").addEventListener("click", () => {
+      if (!slideInterval) {
+        showSlides();
+        slideInterval = setInterval(showSlides, 2500);
+      }
+    });
+
+    document.getElementById("stopBtn").addEventListener("click", () => {
+      clearInterval(slideInterval);
+      slideInterval = null;
+    });
+  </script>
+</body>
+</html>
