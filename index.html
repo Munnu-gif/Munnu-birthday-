@@ -1,245 +1,417 @@
-we<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Muniba ji ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #000, #1a001f);
-      color: #fff;
-      font-family: 'sengai Ul', sans-serif;
-      text-align: center;
-      overflow-x: hidden;
-    }
-    h1, h2 {
-      margin: 10px 0;
-      text-shadow: 0 0 15px #ff4da6;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Muniba jii ❤️</title>
+<style>
+  :root{
+    --bg1:#000;
+    --bg2:#120018;
+    --accent:#ff4da6;
+    --pink:#ffb6c1;
+    --glow: 0 0 20px rgba(255,77,166,0.6);
+  }
+  html,body{height:100%;margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Noto Sans",sans-serif;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#fff}
+  .wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px;box-sizing:border-box}
+  h1{margin:6px 0;font-size:28px;text-shadow:0 0 18px var(--accent)}
+  h2{margin:2px 0;font-size:18px;color:var(--pink)}
+  h3{margin:2px 0;font-size:14px;color:#caa3bf}
 
-    /* 🎂 4D Cake */
-    .cake {
-      position: relative;
-      margin: 40px auto;
-      width: 220px;
-      height: 160px;
-      perspective: 1000px;
-    }
-    .layer {
-      width: 220px;
-      height: 50px;
-      border-radius: 20px;
-      margin-bottom: 5px;
-      background: linear-gradient(45deg, #ff4da6, #ff99cc);
-      box-shadow: 0 10px 25px rgba(255, 77, 166, 0.7);
-      transform: rotateX(20deg);
-    }
-    .candle {
-      position: absolute;
-      top: -50px;
-      left: 100px;
-      width: 20px;
-      height: 50px;
-      background: #fff;
-      border-radius: 5px;
-    }
-    .flame {
-      position: absolute;
-      top: -25px;
-      left: 106px;
-      width: 10px;
-      height: 25px;
-      background: radial-gradient(circle, yellow 70%, orange 90%);
-      border-radius: 50%;
-      animation: flicker 0.3s infinite alternate;
-      box-shadow: 0 0 25px 7px orange;
-    }
-    @keyframes flicker {
-      from { transform: scale(1); opacity: 1; }
-      to { transform: scale(1.2); opacity: 0.6; }
-    }
+  /* Container */
+  .stage{width:100%;max-width:980px;background:rgba(255,255,255,0.02);border-radius:14px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.6);position:relative;overflow:hidden}
 
-    /* Fireworks */
-    .firework {
-      position: fixed;
-      width: 4px;
-      height: 80px;
-      border-radius: 50%;
-      animation: explode 1s ease-out forwards;
-    }
-    @keyframes explode {
-      0% { transform: scale(0.2); opacity: 1; }
-      100% { transform: scale(1.5); opacity: 0; }
-    }
+  /* cake 3D */
+  .cake{width:280px;height:190px;margin:12px auto;perspective:1200px;position:relative}
+  .cake .layer{width:280px;height:56px;border-radius:18px;background:linear-gradient(90deg,#ff6b9a,#ffb3d6);box-shadow:0 12px 30px rgba(255,77,166,0.45);transform-origin:center;transition:transform .9s cubic-bezier(.2,.9,.2,1),opacity .9s}
+  .cake .layer.l1{transform:translateZ(40px) rotateX(18deg)}
+  .cake .layer.l2{transform:translateZ(0px) rotateX(16deg);margin-top:6px}
+  .cake .layer.l3{transform:translateZ(-40px) rotateX(14deg);margin-top:6px}
+  .cake .candle{position:absolute;left:50%;transform:translateX(-50%);top:-44px;width:14px;height:48px;border-radius:4px;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,0.4)}
+  .cake .flame{position:absolute;left:50%;transform:translateX(-50%);top:-66px;width:14px;height:26px;border-radius:50%;background:radial-gradient(circle,#fffb8f 20%,#ffb74d 50%,#ff7043 90%);box-shadow:0 0 22px 6px rgba(255,120,40,0.6);animation:flicker .32s infinite alternate}
+  @keyframes flicker{from{transform:translateX(-50%) scale(1)}to{transform:translateX(-50%) scale(1.18)}}
 
-    /* Photos */
-    .photos img {
-      max-width: 90%;
-      max-height: 400px;
-      border-radius: 15px;
-      margin: 15px auto;
-      box-shadow: 0 0 30px #ff1493;
-      display: photo; show photo 
-    }
+  /* cake cut (layers fly apart) */
+  .cake.cut .layer.l1{transform:translateX(-140px) translateZ(40px) rotate(-20deg) translateY(-10px);opacity:0.95}
+  .cake.cut .layer.l2{transform: translateY(40px) rotateZ(3deg) translateZ(0)}
+  .cake.cut .layer.l3{transform:translateX(140px) translateZ(-40px) rotate(20deg) translateY(-10px);opacity:0.95}
+  .cake.cut .flame{opacity:0;transform:translateX(-50%) scale(.2)}
 
-    /* Romantic Paragraph */
-    .romantic-text {
-      font-size: 20px;
-      margin: 30px auto;
-      max-width: 85%;
-      line-height: 1.7;
-      color: #ffb6c1;
-      text-shadow: 0 0 12px #ff4da6;
-      animation: fadeIn 3s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+  /* fireworks canvas */
+  #fx{position:absolute;inset:0;pointer-events:none;z-index:40}
 
-    /* Final Typing */
-    .final-message {
-      font-size: 22px;
-      font-weight:bold;
-      color: #ff4da6;
-      margin-top: 30px;
-      animation: typing 5s steps(40, end), blink .75s step-end infinite;
-      white-space: nowrap;
-      overflow:unhidden
-      border-right: 3px solid #ff4da6;
-      width: 0;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink {
-      50% { border-color: transparent }
-    }
+  /* photos area */
+  .photos{position:relative;height:420px;margin:12px auto;max-width:760px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.005));overflow:hidden}
+  .photos img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:100%;max-height:100%;border-radius:12px;box-shadow:var(--glow);opacity:0;transition:opacity .6s ease, transform .6s ease}
+  .photos img.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  .photos .placeholder{color:var(--pink);font-size:16px;padding:20px}
 
-    .hidden { display: none; }
-    button {
-      padding: 12px 25px;
-      font-size: 18px;
-      background: linear-gradient(45deg, crimson, purple);
-      border: none;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      margin-top: 20px;
-      box-shadow: 0 0 18px #ff4da6;
-    }
-    button:hover {
-      background: darkred;
-    }
-  </style>
+  /* controls & text */
+  .controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+  .btn{padding:10px 18px;border-radius:10px;border:none;background:linear-gradient(90deg,#ff6b9a,#ff416c);color:#071029;font-weight:700;cursor:pointer;box-shadow:var(--glow)}
+  .btn.secondary{background:linear-gradient(90deg,#6b6bff,#8f8fff);color:#fff}
+
+  .wish{margin:14px auto;max-width:820px;padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.03);display:none}
+  .wish.show{display:block}
+  .wish p{margin:0;color:var(--pink);font-size:18px;line-height:1.6}
+
+  /* final small text */
+  .final-text{margin-top:18px;font-size:20px;color:#ffd6ec;min-height:30px}
+
+  /* video modal */
+  #videoModal{position:fixed;inset:0;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;z-index:9999;padding:18px}
+  #videoModal.hidden{display:none}
+  #videoModal video{max-width:100%;max-height:90vh;border-radius:12px;box-shadow:0 12px 60px rgba(0,0,0,0.8)}
+
+  /* typing final message */
+  .typingText{font-size:20px;color:#ff99d1;margin-top:18px;min-height:26px;letter-spacing:0.6px}
+  /* responsive */
+  @media (max-width:820px){.photos{height:300px}.cake{width:210px;height:150px}.photos img{max-height:260px}}
+</style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="stage" role="main" aria-label="Birthday card">
+      <canvas id="fx"></canvas>
 
-  <h1>🎂 Happy Birthday My Princess ❤️</h1>
-  <h2>💖 Meri Pyaari Shehzadi Ji 💖</h2>
-<h3> 2️⃣7️⃣ September special 💗✨</h3>
-  <!-- Cake -->
-  <div class="cake" id="cake">
-    <div class="layer"></div>
-    <div class="layer"></div>
-    <div class="layer"></div>
-    <div class="candle"></div>
-    <div class="flame"></div>
-  </div>
-  <button onclick="cutCake()">Cut the Cake 🎂</button>
+      <h1>🎂 Happy Birthday My Princess ❤️</h1>
+      <h2>💖 Meri Pyaari Shehzadi Ji 💖</h2>
+      <h3>27️⃣ September special 💗✨</h3>
 
-  <h2 id="birthdayWish" class="hidden">🎉 Happy Birthday Muniba Ji 🎉</h2>
+      <!-- cake -->
+      <div class="cake" id="cake">
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="layer l3"></div>
+        <div class="candle"></div>
+        <div class="flame"></div>
+      </div>
 
-  <!-- Photos -->
-  <div class="photos" id="slideshow">
-    <img src="images/Pic1.jpg">
-    <img src="images/Pic2.jpg">
-    <img src="images/Pic3.jpg">
-    <img src="images/Pic4.jpg">
-    <img src="images/Pic5.jpg">
-    <img src="images/Pic6.jpg">
-    <img src="images/Pic7.jpg">
-    <img src="images/Pic8.jpg">
-    <img src="images/Pic9.jpg">
-    <img src="images/Pic10.jpg">
-    <img src="images/Pic11.jpg">
-    <img src="images/Pic12.jpg">
-    <img src="images/Pic13.jpg">
-    <img src="images/Pic14.jpg">
-    <img src="images/Pic15.jpg">
-  </div>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <button class="btn" id="cutBtn">Cut the Cake 🎂</button>
+        <button class="btn secondary" id="openVidBtn">Open Video (if uploaded)</button>
+      </div>
 
-  <button onclick="startSlideshow()">▶ Play Slideshow</button>
+      <h2 id="birthdayWish" style="margin-top:14px;opacity:0;transition:opacity .8s">🎉 Happy Birthday Muniba Ji 🎉</h2>
 
-  <!-- Romantic Paragraph -->
-  <div class="romantic-text" id="loveNote">
-  <3.'
+      <!-- photos -->
+      <div class="photos" id="photos">
+        <div class="placeholder" id="photoPlaceholder">Photos loading… if nothing appears, rename/upload images as pic1..pic15 in the repo 'images' folder.</div>
+        <!-- JS will inject <img> elements here -->
+      </div>
 
-"Jaise raat ke pass chand ke siwa,
+      <div class="controls">
+        <button class="btn" id="playBtn">▶ Play Slideshow</button>
+        <button class="btn" id="stopBtn">⏹ Stop</button>
+      </div>
 
-Kuchh nahii,
+      <div class="wish" id="wishBlock">
+        <p id="romanceText">
+          <!-- romantic paragraph inserted by JS for better formatting -->
+        </p>
+      </div>
 
-"Waise hi mere pass aapke siwa, Kuchh nahi,  On your 16th birthday, my love, I just want to remind you —  
-    you’re not just my girlfriend, you’re the reason my heart beats. 💓  
-    Every smile of yours lights up my world brighter than a thousand stars. ✨  
-    I pray that your life is always filled with happiness, laughter and endless love.I will love you alwys.You are my favourite person . Apka diya huwa sath aur aapka pyaar hum kabhi bhi nhi bhulenge jana. Misss youuu sooooooooooooooooooooøoooöooooooóoooooooo muçhhhhhhhhhhhhhh yrrrrrrr ✨💗🥀
-    You’re my princess 👑, my best friend, my forever dream.  
-    <br><br>
-   Take care ❤️ miss ji .Miss you babe ✨💗
+      <div class="final-text" id="endText"></div>
+    </div>
   </div>
 
-  <!-- 16th Happy Birthday -->
-  <h2 id="sixteenMsg" class="hidden">🎉Happy Birthday 🎂🎈 Jana 🎉</h2>
-
-  <!-- Final Message -->
-  <div class="final-message" id="finalMsg">
-    From your Bandar ❤️ Khan ji. Miya ji
+  <!-- video modal (hidden until used) -->
+  <div id="videoModal" class="hidden" aria-hidden="true">
+    <video id="birthdayVideo" controls playsinline></video>
   </div>
 
-  <script>
-    function cutCake() {
-      document.getElementById("cake").classList.add("hidden");
-      document.getElementById("birthdayWish").classList.remove("hidden");
-      for (let i = 0; i < 15; i++) {
-        let fw = document.createElement("div");
-        fw.className = "firework";
-        fw.style.left = Math.random()*100 + "vw";
-        fw.style.top = Math.random()*100 + "vh";
-        fw.style.background = "hsl(" + Math.random()*360 + ",100%,50%)";
-        document.body.appendChild(fw);
-        setTimeout(()=>fw.remove(), 1000);
-      }
+<script>
+/* ----------------------
+  Utility: check image exists (tries by loading)
+   ---------------------- */
+function imageExists(url){
+  return new Promise(res => {
+    const img = new Image();
+    img.onload = ()=>res(true);
+    img.onerror = ()=>res(false);
+    img.src = url + '?_=' + Date.now(); // avoid aggressive cache while testing
+  });
+}
+
+/* ----------------------
+  Build list of possible candidate URLs for each index
+  This helps if user used Pic1.jpg or pic1.JPG or png etc.
+   ---------------------- */
+function candidatesForIndex(i){
+  const bases = [
+    `pic${i}`,
+    `Pic${i}`,
+    `PIC${i}`,
+    `Pic-${i}`,
+    `IMG_${i}`,
+    `img${i}`,
+    `image${i}`
+  ];
+  const exts = ['.jpg','.jpeg','.png','.webp','.JPG','.JPEG','.PNG'];
+  const urls=[];
+  bases.forEach(b=>exts.forEach(e=>urls.push(`images/${b}${e}`)));
+  return urls;
+}
+
+/* ----------------------
+  For i from 1..15 try to find first working URL
+   ---------------------- */
+async function resolveImages(count=15){
+  const found=[];
+  for(let i=1;i<=count;i++){
+    const cands = candidatesForIndex(i);
+    let okUrl = null;
+    for(const u of cands){
+      // quick check
+      // eslint-disable-next-line no-await-in-loop
+      const ok = await imageExists(u);
+      if(ok){ okUrl = u; break; }
     }
+    if(okUrl) found.push(okUrl);
+  }
+  return found;
+}
 
-    let currentPhoto = 0;
-    function startSlideshow() {
-      const photos = document.querySelectorAll(".photos img");
-      const note = document.getElementById("loveNote");
-      const sixteen = document.getElementById("sixteenMsg");
-      const final = document.getElementById("finalMsg");
-      photos.forEach(p => p.style.display = "none");
+/* ----------------------
+  Render photos into DOM once we have URLs
+   ---------------------- */
+const photosEl = document.getElementById('photos');
+const placeholder = document.getElementById('photoPlaceholder');
+let images = []; // resolved urls
+let slideIdx = 0;
+let slideTimer = null;
+let slideshowPlaying = false;
 
-      let interval = setInterval(() => {
-        if (currentPhoto > 0) photos[currentPhoto-1].style.display = "none";
-        if (currentPhoto < photos.length) {
-          photos[currentPhoto].style.display = "open";
-          currentPhoto++;
-        } else {
-          clearInterval(interval);
-          note.classList.remove("hidden");
-          setTimeout(() => {
-            sixteen.classList.remove("hidden");
-          }, 4000);
-          setTimeout(() => {
-            final.classList.remove("hidden");
-          }, 8000);
-        }
-      }, 2000);
+async function initImages(){
+  placeholder.textContent = 'Looking for images in /images (pic1..pic15)…';
+  images = await resolveImages(15);
+  if(images.length === 0){
+    placeholder.innerHTML = 'No images found in <code>/images</code>. Upload or rename images to <code>pic1.jpg</code> … <code>pic15.jpg</code>.';
+    return;
+  }
+  // clear placeholder and inject <img>
+  placeholder.style.display = 'none';
+  photosEl.querySelectorAll('img').forEach(n=>n.remove());
+  images.forEach((src,i)=>{
+    const im = document.createElement('img');
+    im.src = src;
+    im.alt = `photo ${i+1}`;
+    im.dataset.index = i;
+    photosEl.appendChild(im);
+  });
+  // show first if wanted
+  showSlide(0);
+}
+
+/* ----------------------
+  slideshow functions
+   ---------------------- */
+function showSlide(i){
+  const imgs = photosEl.querySelectorAll('img');
+  if(imgs.length===0) return;
+  imgs.forEach(img=>img.classList.remove('show'));
+  const idx = ((i%imgs.length)+imgs.length)%imgs.length;
+  const el = imgs[idx];
+  if(el) el.classList.add('show');
+  slideIdx = idx;
+}
+function nextSlide(){
+  showSlide(slideIdx+1);
+}
+function startSlideshow(){
+  if(slideshowPlaying) return;
+  const imgs = photosEl.querySelectorAll('img');
+  if(imgs.length===0) return alert('No photos loaded yet.');
+  slideshowPlaying = true;
+  slideTimer = setInterval(nextSlide, 2200);
+  // show first immediately
+  showSlide(0);
+}
+function stopSlideshow(){
+  slideshowPlaying = false;
+  if(slideTimer) { clearInterval(slideTimer); slideTimer = null; }
+}
+
+/* ----------------------
+  Cake cut, fireworks, schedule video
+   ---------------------- */
+const cake = document.getElementById('cake');
+const cutBtn = document.getElementById('cutBtn');
+const birthdayWish = document.getElementById('birthdayWish');
+const wishBlock = document.getElementById('wishBlock');
+const romanceText = document.getElementById('romanceText');
+const endText = document.getElementById('endText');
+
+function spawnFireworks(count=10, duration=1600){
+  const canvas = document.getElementById('fx');
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+  const ctx = canvas.getContext('2d');
+  const particles = [];
+  // create simple burst particles
+  for(let k=0;k<count;k++){
+    const x = Math.random()*canvas.width;
+    const y = Math.random()*canvas.height*0.6;
+    for(let i=0;i<40;i++){
+      particles.push({
+        x,y,
+        vx:(Math.random()-0.5)*6,
+        vy:(Math.random()-0.7)*6,
+        life: Math.random()*60+30,
+        color: `hsl(${Math.random()*360} 100% 60%)`,
+        size: 2+Math.random()*4
+      });
     }
-  </script>
+  }
+  let frame=0;
+  function step(){
+    frame++;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let i=particles.length-1;i>=0;i--){
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy; p.vy += 0.06; p.life--;
+      ctx.fillStyle = p.color;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();
+      if(p.life<=0) particles.splice(i,1);
+    }
+    if(particles.length>0 && frame<200) requestAnimationFrame(step);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  step();
+}
 
+let scheduledVideoTimeout = null;
+let wasPlayingBeforeVideo = false;
+function cutCake(){
+  // animate layers
+  cake.classList.add('cut');
+  // show wish
+  birthdayWish.style.opacity = '1';
+  // spawn fireworks
+  spawnFireworks(8,1500);
+  // reveal a little romantic placeholder immediately
+  wishBlock.classList.add('show');
+  romanceText.innerHTML = `My dearest Muniba — on your special day my heart overflows with gratitude for your love. You are my calm in storms, my laughter in silence, and the most beautiful part of every tomorrow I imagine. I promise to cherish you, to stand by you, and to make your days brighter than the brightest star. Happy birthday, my queen.`;
+  // stop slideshow while we prepare video
+  wasPlayingBeforeVideo = slideshowPlaying;
+  stopSlideshow();
+
+  // schedule video modal after 10 seconds
+  if(scheduledVideoTimeout) clearTimeout(scheduledVideoTimeout);
+  scheduledVideoTimeout = setTimeout(()=>{
+    openVideoModal(); // will attempt to play video if available
+  }, 10000);
+}
+
+/* ----------------------
+  Video modal handling
+   ---------------------- */
+const videoModal = document.getElementById('videoModal');
+const birthdayVideo = document.getElementById('birthdayVideo');
+const openVidBtn = document.getElementById('openVidBtn');
+
+function openVideoModal(){
+  // set expected src; user must upload videos/celebration.mp4 to repo
+  const candidate = 'videos/celebration.mp4';
+  // quick existence test
+  imageExists(candidate).then(ok=>{
+    if(!ok){
+      alert('Video not found at /videos/celebration.mp4. Upload your video to videos/celebration.mp4 in the repo (see instructions).');
+      // restore slideshow if it was playing before
+      if(wasPlayingBeforeVideo) startSlideshow();
+      return;
+    }
+    birthdayVideo.src = candidate;
+    videoModal.classList.remove('hidden');
+    videoModal.setAttribute('aria-hidden','false');
+    // try to play; this is allowed because user clicked Cut earlier (user gesture)
+    const p = birthdayVideo.play();
+    if(p && p.catch) p.catch(()=>{ /* some mobiles may block autoplay with audio */ });
+    // pause slideshow if playing
+    wasPlayingBeforeVideo = slideshowPlaying;
+    stopSlideshow();
+  });
+}
+
+function closeVideoModal(){
+  birthdayVideo.pause();
+  birthdayVideo.currentTime = 0;
+  videoModal.classList.add('hidden');
+  videoModal.setAttribute('aria-hidden','true');
+  // resume slideshow if it was playing
+  if(wasPlayingBeforeVideo) startSlideshow();
+}
+
+/* when video ends */
+birthdayVideo.addEventListener('ended', ()=> {
+  closeVideoModal();
+  // keep birthday wish visible and show '16th' special message and final typing
+  showSixteenAndFinal();
+});
+
+/* open manually button */
+openVidBtn.addEventListener('click', openVideoModal);
+
+/* close modal on background click */
+videoModal.addEventListener('click', (e)=>{
+  if(e.target === videoModal) { closeVideoModal(); }
+});
+
+/* ----------------------
+  After slideshow finishes show paragraph and final typing
+   ---------------------- */
+function showSixteenAndFinal(){
+  const sixteen = document.getElementById('sixteenMsg') || null;
+  // show special 16th message in the spot below
+  const spot = document.getElementById('endText');
+  spot.textContent = ''; // clear
+  // 1) show warm paragraph (already shown)
+  wishBlock.classList.add('show');
+  // 2) show "🎉 16th Happy Birthday 🎂🎈 Jana 🎉" with glow for 3s
+  const msg = document.createElement('div');
+  msg.style.fontSize = '22px'; msg.style.marginTop='12px'; msg.style.color='#ffd6ec';
+  msg.textContent = '🎉 16th Happy Birthday 🎂🎈 Jana 🎉';
+  spot.appendChild(msg);
+  // 3) After short delay, type final signature
+  setTimeout(()=>typeFinal("From your Bandar ❤️ Khan ji. Miya ji", 40), 2000);
+}
+
+/* typing final message char-by-char */
+function typeFinal(text, speed){
+  const el = document.getElementById('endText');
+  el.textContent = '';
+  let i=0;
+  const iv = setInterval(()=>{
+    el.textContent += text[i] || '';
+    i++;
+    if(i>text.length){ clearInterval(iv); el.style.borderRight='none'; }
+  }, speed);
+}
+
+/* ----------------------
+  Bind controls
+   ---------------------- */
+document.getElementById('playBtn').addEventListener('click', ()=>{
+  if(images.length===0){ alert('No images found. Upload images to /images or rename them to pic1..pic15'); return; }
+  startSlideshow();
+});
+document.getElementById('stopBtn').addEventListener('click', ()=>stopSlideshow());
+cutBtn.addEventListener('click', cutCake);
+
+/* ----------------------
+  On load: init images and romance text and final text placeholder
+   ---------------------- */
+window.addEventListener('load', async ()=>{
+  // set the romantic text default (kept also for cut event)
+  romanceText.innerHTML = `On this beautiful day I celebrate you — the one who makes ordinary moments sparkle. Your laugh, your kindness, your courage — everything about you is my favorite. May this year gift you joy, confidence and countless warm memories. I love you more than words can hold.`;
+  document.getElementById('endText').textContent = '';
+  // try to find images automatically
+  await initImages();
+  // if images found but slideshow wasn't started, show first image (already done)
+});
+
+/* useful: when user closes page or navigates away, stop timers */
+window.addEventListener('beforeunload', ()=>{ stopSlideshow(); if(scheduledVideoTimeout) clearTimeout(scheduledVideoTimeout); });
+</script>
 </body>
-  </html>
+</html>
