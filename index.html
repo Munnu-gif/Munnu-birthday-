@@ -45,7 +45,7 @@
   .photos img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:100%;max-height:100%;border-radius:12px;box-shadow:var(--glow);opacity:0;transition:opacity .6s ease, transform .6s ease}
   .photos img.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
   .photos .placeholder{color:var(--pink);font-size:16px;padding:20px}
-
+<source src="video/birthday.mp4">
   /* controls & text */
   .controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
   .btn{padding:10px 18px;border-radius:10px;border:none;background:linear-gradient(90deg,#ff6b9a,#ff416c);color:#071029;font-weight:700;cursor:pointer;box-shadow:var(--glow)}
@@ -140,7 +140,7 @@ function imageExists(url){
 function candidatesForIndex(i){
   const bases = [
     `pic${i}`,
-    `Pic${i}`,
+    `Pic.${i}`,
     `PIC${i}`,
     `Pic-${i}`,
     `IMG_${i}`,
